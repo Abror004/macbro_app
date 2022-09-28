@@ -8,7 +8,7 @@ class ProductPropertyOptionModel {
   ProductPropertyOptionModel.fromJson(Map<String, dynamic> json) {
     extra = json['extra'];
     name = json['name'];
-    order = json['order'];
+    order = json['order']; // example: 0
     value = json['value'];
   }
 }

@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:macbro_app/pages/home_page/HomePageController.dart';
 import 'package:macbro_app/pages/home_page/HomePageCore.dart';
 
 class HomeTextFieldWidget extends StatelessWidget {
@@ -34,7 +37,10 @@ class HomeTextFieldWidget extends StatelessWidget {
                   ),
                   Padding(
                       padding: const EdgeInsets.only(left: 16),
-                      child: Image.asset(HomePageCore.notificationIcon, height: HomePageCore.notificationIconSize, width: HomePageCore.notificationIconSize,)
+                      child: InkWell(
+                        onTap: () => Get.find<HomePageController>().getTest(),
+                        child: Image.asset(HomePageCore.notificationIcon, height: HomePageCore.notificationIconSize, width: HomePageCore.notificationIconSize)
+                      )
                   )
                 ]
             )

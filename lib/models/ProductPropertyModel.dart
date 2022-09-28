@@ -7,10 +7,10 @@ class ProductPropertyModel {
   late final String id;
   late final String lang;
   late final String name;
-  late final ProductPropertyOptionModel options;
+  late final List<ProductPropertyOptionModel> options;
   late final String order;
   late final String slug;
-  late final String type;
+  late final String type; // Enum: [ text, number, select, checkbox, radio ]
   late final String updated_at;
 
 
@@ -20,11 +20,11 @@ class ProductPropertyModel {
     description = json['description'];
     id = json['id'];
     lang = json['lang'];
-    options = json['options'];
-    type = json['type'];
     name = json['name'];
+    options = json['options'] == null ? [] : List.generate((json['options'] as List).length, (index) => ProductPropertyOptionModel.fromJson(json['options'][index]));
     order = json['order'];
     slug = json['slug'];
-    updated_at = json['position']['updated_at'];
+    type = json['type'];
+    updated_at = json['updated_at'];
   }
 }

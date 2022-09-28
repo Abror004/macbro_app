@@ -1,5 +1,5 @@
 class BrandModel {
-  late final String active;
+  late final bool active;
   late final String created_at;
   late final String description;
   late final String id;

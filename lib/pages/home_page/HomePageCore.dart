@@ -54,7 +54,6 @@ class HomePageCore {
     ],
   );
 
-
   /// example data
   // post type
   static List<Post> newPosts = [
@@ -80,16 +79,5 @@ class HomePageCore {
     Post(follow: true, discount: false, discountCost: 0, image: 'assets/MXQT2_FV531 1.png', name: 'AirPods', cost: '105 999 999', category: Categories.fresh),
     Post(follow: true, discount: false, discountCost: 0, image: 'assets/ipad-air-select-cell-spacegray-202009 1.png', name: 'MacBook', cost: '105 999 999', category: Categories.fresh),
     Post(follow: true, discount: false, discountCost: 0, image: 'assets/image 155.png', name: 'iPhone 12 Pro', cost: '105 999 999', category: Categories.fresh),
-  ];
-  // iphone categories
-  static List<List<String>> iphoneProducts = [
-    ['iPhone', 'assets/iphone_categories/phone5.png'],
-    ['iPad', 'assets/ipad-air-select-cell-spacegray-202009 1.png'],
-    ['iPod', 'assets/iphone_categories/phones.png'],
-    ['Watches', 'assets/iphone_categories/smartwatch.png'],
-    ['AirPods', 'assets/MXQT2_FV531 1.png'],
-    ['MacBook', 'assets/macbook-air-space-gray-select-201810 1.png'],
-    ['iMacs', 'assets/iphone_categories/mac.png'],
-    ['Аксессуары', 'assets/categories/accessory.png'],
   ];
 }

@@ -42,21 +42,21 @@ class HomePage extends StatelessWidget {
                         child: Column(
                           children: [
                             // # banners pageview
-                            HomePagePageViewWidget(bannerImages: controller.bannerList, bannerController: controller.bannerController, banners: controller.list,),
-                            // # new posts
-                            HorizontalListWidget(postsTypeName: 'Новые', posts: controller.allData['new']!),
+                            if(controller.banners != null && controller.banners!.banners.isNotEmpty)
+                            HomePagePageViewWidget(bannerImages: controller.banners!.banners, bannerController: controller.bannerController, banners: controller.list),
+                            // # first featured-list
+                            if(controller.featuredList != null && controller.featuredList!.featured_lists.isNotEmpty)
+                              HorizontalListWidget(postsTypeName: controller.featuredList!.featured_lists[0].title, products: controller.featuredList!.featured_lists[0].products),
                             const SizedBox(height: 9),
 
-                            // # discount posts
-                            HorizontalListWidget(postsTypeName: 'Скидки', posts: controller.allData['discounts']!),
-                            const SizedBox(height: 16),
-
                             // # categories
-                            CategoriesWidget(categories: controller.categories, categoriesImages: controller.categoriesImages),
-                            const SizedBox(height: 16),
+                            if(controller.categories != null && controller.categories!.categories.isNotEmpty)
+                            CategoriesWidget(categories: controller.categories!.categories),
 
-                            // # recommend posts
-                            HorizontalListWidget(postsTypeName: 'Рекомендуемые', posts: controller.allData['recommend']!),
+                            // # other featured-list
+                            if(controller.featuredList != null && controller.featuredList!.featured_lists.isNotEmpty)
+                              for(int i=1; i<controller.featuredList!.featured_lists.length; i++)
+                                HorizontalListWidget(postsTypeName: controller.featuredList!.featured_lists[i].title, products: controller.featuredList!.featured_lists[i].products),
                             const SizedBox(height: 24),
                           ],
                         ),
